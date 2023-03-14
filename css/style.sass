@@ -1,0 +1,183 @@
+@font-face
+    font-family: 'Roboto'
+    src: url("../fonts/Roboto/Roboto-Regular.ttf")
+
+@font-face
+    font-family: 'Arial'
+    src: url("../fonts/arial/Arial.ttf")
+
+@font-face
+    font-family: 'Arial-Italic'
+    src: url("../fonts/arial/Arial_italic.ttf")
+
+@mixin font($font-family, $font-size, $line-height, $font-weight, $font-style)
+    font-family: $font-family
+    font-size: $font-size
+    line-height: $line-height
+    font-weight: $font-weight
+    font-style: $font-style
+
+@mixin flex-center($display, $justify-content, $align-items, $flex-direction)
+    display: $display
+    justify-content: $justify-content
+    align-items: $align-items
+    flex-direction: $flex-direction
+
+// =============================================
+*,*:before,*:after
+    padding: 0
+    margin: 0
+    border: 0
+    box-sizing: border-box
+
+a
+    text-decoration: none
+
+li
+    list-style: none
+
+body
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: #000
+
+.wrapper
+    width: 595px
+    height: 842px
+    max-width: 595px
+    max-height: 842px
+    background-color: #fff
+    margin-top: 50px
+    padding: 13px 12px 13px 12px
+
+.comp_seal_mw
+    position: relative
+    max-width: 151px
+    max-height: 151px
+    transform: rotate(-102.97deg)
+    -webkit-transform: rotate(-102.97deg)
+    -ms-transform: rotate(-102.97deg)
+    left: 410px
+    bottom: 102px
+
+header
+    margin-bottom: 17px
+
+.main
+    margin-bottom: 20px
+
+.main__content
+    @include flex-center(flex, flex-start, flex-start, column)
+
+.main__title
+    @include font('Roboto', 22px, 130%, 600, normal)
+    color: #0B1F35
+.main__sub_title
+    @include font('Roboto', 14px, 130%, 400, normal)
+    color: #0B1F35
+
+.information_insured
+    margin-bottom: 32px
+
+.inf_title
+    @include font('Arial', 10px, 11px, 400, normal)
+    text-transform: uppercase
+    margin-bottom: 6px
+    
+.requested_risks__title, .cargo_information__title
+    @include font('Arial', 10px, 11px, 400, normal)
+    text-transform: uppercase
+
+// table ===================================
+table
+    border-collapse: collapse
+
+.information_insured__table
+    td
+        border-bottom: 1px solid #B6BCC3
+        border-right: 1px solid #B6BCC3
+
+.information_insured__table_fst_line, .information_insured__table_snd_line
+    background-color: #EFEFEF
+    td
+        &:nth-child(1), &:nth-child(2)
+            border-bottom: 0
+            border-right: 1px solid #B6BCC3
+
+.information_insured__table_snd_line
+    max-height: 35px
+    td
+        &:nth-child(1), &:nth-child(2)
+            border-bottom: 0
+            border-right: 1px solid #B6BCC3
+            height: 37px
+        &:nth-child(3)
+            border-bottom: 0
+            border-right: 1px solid #B6BCC3
+            @include font('Arial-italic', 8px, 9px, 400, italic)
+            height: 37px
+
+.info_line
+    td
+        @include font('Arial', 10px, 130%, 400, normal)
+        padding: 2px 0 0 4px
+        &:first-child
+            width: 243px
+        &:nth-child(2)
+            width: 127px
+        &:nth-child(3)
+            width: 99px
+        &:last-child
+            border-right: 0
+            width: 102px
+            
+.cargo_information__main_content, .requested_risks
+    margin-bottom: 32px
+
+.cargo_information__table
+    width: 100%
+    td
+        border-bottom: 1px solid #B6BCC3
+        border-right: 1px solid #B6BCC3
+            
+.cargo_line
+    &:nth-child(8), &:nth-child(10), &:nth-child(13)
+        background-color: #EFEFEF
+    td
+        @include font('Arial', 9.56178px, 11px, 400, normal)
+        padding: 2px 0 0 4px
+        &:first-child
+            width: 243px
+        &:last-child
+            border-right: 0
+
+.cargo_information__table_fst_line, .cargo_information__table_fst_line
+    td
+        &:nth-child(2)
+            width: 127px
+        &:nth-child(3)
+            width: 201px
+            
+.cargo_information__table_eighth_line, .cargo_information__table_tenth_line, .cargo_information__table_thirteenth_line
+    td
+        border-bottom: 0
+
+.requested_risks__table, .date_completion__table
+    width: 568px
+
+.risks_line, .date_line
+    td
+        @include font('Arial', 10px, 130%, 400, normal)
+        padding: 2px 0 0 4px
+        border-bottom: 1px solid #B6BCC3
+        border-right: 1px solid #B6BCC3
+        &:last-child
+            border-right: none
+            width: 329px
+    
+.requested_risks__table_thrd_line
+    height: 30px
+    td
+        &:first-child
+            width: 239px
